@@ -1,14 +1,12 @@
 # ChighiLabs Web
 
-Sitio comercial de ChighiLabs: POS Facturador, ERP por planes, Automotive Cloud, IoT y desarrollos a medida.
+Export estático completo del sitio comercial de ChighiLabs.
 
-## Despliegue con Dokploy
+## Dokploy
 
-1. En Dokploy crea una **Application** y elige el proveedor **GitHub**.
-2. Selecciona `royjesus311/chighilabs-web`, rama `main`.
-3. En **Build Type**, selecciona **Dockerfile**.
-4. Deja **Dockerfile path** vacío (usa el archivo raíz) y **Docker Context Path** como `.`.
-5. Despliega. El contenedor expone el puerto **80**.
-6. En **Domains**, añade `chighilabs.com` con puerto interno **80**. Para `www.chighilabs.com`, crea un CNAME hacia el dominio raíz o configura una redirección en Cloudflare.
+- Build type: **Dockerfile**
+- Docker File: `Dockerfile`
+- Docker Context Path: `.`
+- Puerto del dominio: `80`
 
-El sitio está empaquetado dentro de `chighilabs-site-static.zip` para mantener el repositorio simple y el despliegue reproducible.
+El paquete está dividido internamente solo para que GitHub pueda almacenarlo de forma fiable. Docker lo recompone durante la imagen, sin recortar recursos, animaciones ni funcionalidades.
