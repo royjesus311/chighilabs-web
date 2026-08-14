@@ -6,7 +6,7 @@ RUN apk add --no-cache unzip
 # Se reconstruye dentro de la imagen, sin alterar ningún recurso del sitio.
 COPY chighilabs-site-static.zip.part-* /tmp/
 RUN cat /tmp/chighilabs-site-static.zip.part-* > /tmp/chighilabs-site-static.zip \
-    && unzip -q /tmp/chighilabs-site-static.zip -d /usr/share/nginx/html \
+    && unzip -oq /tmp/chighilabs-site-static.zip -d /usr/share/nginx/html \
     && rm -f /tmp/chighilabs-site-static.zip /tmp/chighilabs-site-static.zip.part-*
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
